@@ -5,12 +5,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
-import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GerenciadoraClientesTest_Ex7 {
+public class Ex7GerenciadoraClientesTest {
 
   private GerenciadoraClientes gerClientes;
   private final int idCLiente01 = 1;
@@ -18,12 +17,10 @@ public class GerenciadoraClientesTest_Ex7 {
 
   @Before
   public  void setUp() {
-    Cliente cliente01 =
-        new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 =
-        new Cliente(idCLiente02, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
+    var cliente01 = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(idCLiente02, "Maria", 34, "maria@gmail.com", 2, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 
@@ -41,7 +38,7 @@ public class GerenciadoraClientesTest_Ex7 {
 
   @Test
   public void testPesquisaCliente() {
-    Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
+    var cliente = gerClientes.pesquisaCliente(idCLiente01);
 
     assertThat(cliente.getId(), is(idCLiente01));
   }

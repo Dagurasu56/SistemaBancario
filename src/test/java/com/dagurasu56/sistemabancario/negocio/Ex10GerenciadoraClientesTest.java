@@ -1,9 +1,5 @@
 package com.dagurasu56.sistemabancario.negocio;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNull;
@@ -11,20 +7,23 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
-import java.util.List;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
-public class GerenciadoraClientesTest_Ex10 {
+public class Ex10GerenciadoraClientesTest {
 
   private GerenciadoraClientes gerClientes;
-  private int idCLiente01 = 1;
-  private int idCLiente02 = 2;
+  private final int idCLiente01 = 1;
+  private final int idCLiente02 = 2;
 
   @Before
   public void setUp() {
-    Cliente cliente01 = new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 = new Cliente(idCLiente02, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
+    var cliente01 = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(idCLiente02, "Maria", 34, "maria@gmail.com", 2, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 
@@ -38,22 +37,20 @@ public class GerenciadoraClientesTest_Ex10 {
 
   @Test
   public void testPesquisaCliente() {
-    Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
+    var cliente = gerClientes.pesquisaCliente(idCLiente01);
 
     assertThat(cliente.getId(), is(idCLiente01));
   }
 
   @Test
   public void testPesquisaClienteInexistente() {
-
-    Cliente cliente = gerClientes.pesquisaCliente(1001);
+    var cliente = gerClientes.pesquisaCliente(1001);
 
     assertNull(cliente);
   }
 
   @Test
   public void testRemoveCliente() {
-
     boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 
     assertThat(clienteRemovido, is(true));
@@ -71,9 +68,9 @@ public class GerenciadoraClientesTest_Ex10 {
   }
 
   @Test
+  @ParameterizedTest
   public void testClienteIdadeAceitavel() throws IdadeNaoPermitidaException {
-
-    Cliente cliente = new Cliente(1, "Gustavo", 25, "guga@gmail.com", 1, true);
+    var cliente = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
 
     boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 
@@ -82,8 +79,7 @@ public class GerenciadoraClientesTest_Ex10 {
 
   @Test
   public void testClienteIdadeAceitavel_02() throws IdadeNaoPermitidaException {
-
-    Cliente cliente = new Cliente(1, "Gustavo", 18, "guga@gmail.com", 1, true);
+    var cliente = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
 
     boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 
@@ -92,8 +88,7 @@ public class GerenciadoraClientesTest_Ex10 {
 
   @Test
   public void testClienteIdadeAceitavel_03() throws IdadeNaoPermitidaException {
-
-    Cliente cliente = new Cliente(1, "Gustavo", 65, "guga@gmail.com", 1, true);
+    var cliente = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
 
     boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 
@@ -101,25 +96,21 @@ public class GerenciadoraClientesTest_Ex10 {
   }
 
   @Test
-  public void testClienteIdadeAceitavel_04() throws IdadeNaoPermitidaException {
+  public void testClienteIdadeAceitavel_04() {
+    var cliente = new Cliente(idCLiente01, "João", 17, "joao@gmail.com", 1, true);
 
-    /* ========== Montagem do Cen�rio ========== */
-    Cliente cliente = new Cliente(1, "Gustavo", 17, "guga@gmail.com", 1, true);
-
-    /* ========== Execu��o ========== */
     try {
       gerClientes.validaIdade(cliente.getIdade());
       fail();
     } catch (Exception e) {
-      /* ========== Verifica��es ========== */
       assertThat(e.getMessage(), is(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA));
     }
   }
 
   @Test
-  public void testClienteIdadeAceitavel_05() throws IdadeNaoPermitidaException {
+  public void testClienteIdadeAceitavel_05() {
+    var cliente = new Cliente(idCLiente01, "João", 66, "joao@gmail.com", 1, true);
 
-    Cliente cliente = new Cliente(1, "Gustavo", 66, "guga@gmail.com", 1, true);
     try {
       gerClientes.validaIdade(cliente.getIdade());
       fail();

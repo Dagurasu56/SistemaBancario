@@ -5,10 +5,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
-import java.util.List;
 import org.junit.Test;
 
-public class GerenciadoraClientesTest_Ex5 {
+public class Ex5GerenciadoraClientesTest {
 
   private GerenciadoraClientes gerClientes;
 
@@ -16,18 +15,17 @@ public class GerenciadoraClientesTest_Ex5 {
   public void testPesquisaCliente() {
     int idCLiente01 = 1;
     int idCLiente02 = 2;
-    Cliente cliente01 =
-        new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 =
-        new Cliente(idCLiente02, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
+    
+    var cliente01 = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(idCLiente02, "Maria", 34, "maria@gmail.com", 2, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 
     gerClientes = new GerenciadoraClientes(clientesDoBanco);
 
-    Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
+    var cliente = gerClientes.pesquisaCliente(idCLiente01);
 
     assertThat(cliente.getId(), is(idCLiente01));
   }
@@ -36,12 +34,11 @@ public class GerenciadoraClientesTest_Ex5 {
   public void testRemoveCliente() {
     int idCLiente01 = 1;
     int idCLiente02 = 2;
-    Cliente cliente01 =
-        new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 =
-        new Cliente(idCLiente02, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var cliente01 = new Cliente(idCLiente01, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(idCLiente02, "Maria", 34, "maria@gmail.com", 2, true);
+
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 

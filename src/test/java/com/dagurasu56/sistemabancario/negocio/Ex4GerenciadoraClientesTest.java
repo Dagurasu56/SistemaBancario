@@ -5,35 +5,34 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
-import java.util.List;
 import org.junit.Test;
 
-public class GerenciadoraClientesTest_Ex3 {
+public class Ex4GerenciadoraClientesTest {
 
   private GerenciadoraClientes gerClientes;
 
   @Test
   public void testPesquisaCliente() {
-    Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 = new Cliente(2, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
+    var cliente01 = new Cliente(1, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(2, "Maria", 34, "maria@gmail.com", 2, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 
     gerClientes = new GerenciadoraClientes(clientesDoBanco);
 
-    Cliente cliente = gerClientes.pesquisaCliente(1);
+    var cliente = gerClientes.pesquisaCliente(1);
 
     assertThat(cliente.getId(), is(1));
   }
 
   @Test
   public void testRemoveCliente() {
-    Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
-    Cliente cliente02 = new Cliente(2, "Felipe Augusto", 34, "felipeaugusto@gmail.com", 1, true);
+    var cliente01 = new Cliente(1, "João", 31, "joao@gmail.com", 1, true);
+    var cliente02 = new Cliente(2, "Maria", 34, "maria@gmail.com", 2, true);
 
-    List<Cliente> clientesDoBanco = new ArrayList<>();
+    var clientesDoBanco = new ArrayList<Cliente>();
     clientesDoBanco.add(cliente01);
     clientesDoBanco.add(cliente02);
 
