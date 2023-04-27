@@ -1,0 +1,20 @@
+# Arquivos temporários
+*~
+*.swp
+*.log
+
+# Arquivos de compilação
+*.class
+*.jar
+*.war
+
+# Diretórios de dependências
+/target/
+/lib/
+/node_modules/
+
+# Arquivos de configuração do IDE
+.idea/
+*.iml
+*.ipr
+*.iws
