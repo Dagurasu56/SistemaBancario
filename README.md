@@ -1,6 +1,7 @@
 # Testes Automatizados para um Sistema Bancário
-    Este é um exemplo de como criar testes automatizados para um sistema bancário utilizando a ferramenta JUnit, 
-    que foi abordada no curso "Testes Automáticos + Curso Completo de Teste de Software".
+    Este é um exemplo de como criar testes automatizados para um sistema bancário utilizando 
+    a ferramenta JUnit, que foi abordada no curso "Testes Automáticos + Curso Completo de Teste de Software".
+    
     O curso ensinou os fundamentos do teste e do teste automatizado de software, as técnicas envolvidas, 
     os tipos e níveis de teste, além de orientar sobre como se tornar um testador de alto nível e transformar 
     isso em oportunidades de trabalho.
