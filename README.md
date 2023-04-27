@@ -1,7 +1,7 @@
 # Testes Automatizados para um Sistema Bancário
     
-    Este é um exemplo de como criar testes automatizados para um sistema bancário utilizando 
-    a ferramenta JUnit, que foi abordada no curso "Testes Automáticos + Curso Completo de Teste de Software".
+    Este é um exemplo de como criar testes automatizados para um sistema bancário utilizando a ferramenta JUnit,
+    que foi abordada no curso "Testes Automáticos + Curso Completo de Teste de Software".
     
     O curso ensinou os fundamentos do teste e do teste automatizado de software, as técnicas envolvidas, 
     os tipos e níveis de teste, além de orientar sobre como se tornar um testador de alto nível e transformar 
@@ -10,9 +10,9 @@
 ---
 ## Ferramentas utilizadas
 
-- JUnit: utilizado para construir testes automatizados;
-- Mockito: utilizado para criar objetos simulados em testes;
-- Hamcrest: utilizado para realizar asserções em testes;
+- JUnit: utilizado para construir testes automatizados.
+- Mockito: utilizado para criar objetos simulados em testes.
+- Hamcrest: utilizado para realizar asserções em testes.
 - Selenium WebDriver: utilizado para testes de interface do usuário.
 
 ---
@@ -20,7 +20,15 @@
 
     A estrutura dos testes é organizada em pacotes, que contêm classes com métodos de teste.
 
-    Os testes são agrupados em níveis (unitários, integração, sistema) e em tipos (funcionais, de desempenho, de segurança).
+    Os testes são agrupados em níveis:
+        - unitários.
+        - integração.
+        - sistema.
+    
+    e em tipos:
+        - funcionais.
+        - desempenho.
+        - segurança.
 
     A ideia é garantir uma cobertura adequada de testes e uma análise precisa dos resultados.
 
